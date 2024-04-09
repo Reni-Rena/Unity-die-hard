@@ -6,6 +6,7 @@ public class déplacement : MonoBehaviour
 {
     public float speed;
     public GameObject game;
+    public GameObject Target;
     private float rotate;
 
 
@@ -48,7 +49,7 @@ public class déplacement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(game, this.transform.position, base.transform.rotation);
+            Instantiate(game, Target.transform.position, base.transform.rotation);
         }
 
     }
