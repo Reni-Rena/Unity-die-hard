@@ -5,20 +5,25 @@ using UnityEngine;
 public class spawnenemie : MonoBehaviour
 {
     public GameObject mob;
-    public GameObject SP1;
+    public GameObject[] spawns;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(Spawn());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        
+    }
+    IEnumerator Spawn()
+    {
+        while (true)
         {
-            Instantiate(mob, SP1.transform.position, base.transform.rotation);
+            yield return new WaitForSeconds(2);
+            Instantiate(mob, spawns[UnityEngine.Random.Range(0,spawns.Length-1)].transform.position, base.transform.rotation);
         }
     }
 }

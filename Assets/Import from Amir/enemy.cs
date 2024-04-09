@@ -12,7 +12,7 @@ public class enemy : MonoBehaviour
     {
         Agent = gameObject.GetComponent<NavMeshAgent>();
 
-        GameObject.Find("Player");
+        Player = GameObject.FindGameObjectWithTag("Player");
         
     }
 
