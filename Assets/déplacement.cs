@@ -8,12 +8,12 @@ public class déplacement : MonoBehaviour
     public GameObject game;
     public GameObject Target;
     private float rotate;
-
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,11 +30,19 @@ public class déplacement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             this.transform.position += this.transform.forward * speed * Time.deltaTime;
+            animator.SetBool("Running", true);
+
+        }
+        else
+        {
+            animator.SetBool("Running", false);
         }
         if (Input.GetKey(KeyCode.S))
         {
             this.transform.position -= this.transform.forward * speed * Time.deltaTime;
+            animator.SetBool("Running", true);
         }
+
         if (Input.GetKey(KeyCode.A))
         {
             rotate -= 2;
