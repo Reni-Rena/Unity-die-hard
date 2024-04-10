@@ -364,9 +364,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AmountHealth: 30
   MaxHealth: 30
-  Image: {fileID: 285933631668080175}
+  CanvasEnemy: {fileID: 285933631668080175}
   Player: {fileID: 6540062818280801608, guid: ccf9485a47eafc644a18315ea533a046, type: 3}
-  Death: {fileID: 329114225837732768, guid: 1fc5ad82ee230304eba863c797aae53a, type: 3}
+  DeathParticle: {fileID: 329114225837732768, guid: 1fc5ad82ee230304eba863c797aae53a, type: 3}
 --- !u!4 &9003649186675969199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b6d7a7fb2095c8148bd9bdd43bca85ea, type: 3}

@@ -26,18 +26,16 @@ public class UImanager : MonoBehaviour
 
     void Update()
     {
-        
+        ScoreText.text = "Score : " + Score.instance.scoreAmount.ToString();
     }
 
     public void ChangehealthBar(float value, float maxValue)
     {
         HPbar.fillAmount = value/maxValue;
         HPbar.color = new Color(Mathf.Clamp((1 - value / maxValue), 0, 1), Mathf.Clamp((value / maxValue), 0, 1), 0, 1f);
-        hpText.text = "Health :"+value.ToString();
+        hpText.text = "Health :   "+value.ToString();
+
     }
 
-    public void ChanceScore(float Score)
-    {
-        ScoreText.text = "Score :" + Score.ToString();
-    }
+    
 }

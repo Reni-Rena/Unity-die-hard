@@ -34,6 +34,7 @@ public class enemy : MonoBehaviour
         if (AmountHealth <= 0 )
         {
             Instantiate(DeathParticle, this.transform.position, base.transform.rotation);
+            Score.instance.scoreAmount ++;
             Destroy(this.gameObject);
         }
     }

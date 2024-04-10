@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
@@ -9,7 +10,7 @@ public class Health : MonoBehaviour
     public float AmountHealth;
     public float MaxHealth;
     public Canvas Image;
-    public GameObject Death;
+    
     public GameObject spawn;
     void Start()
     {
@@ -29,7 +30,7 @@ public class Health : MonoBehaviour
 
         if (AmountHealth <= 0)
         {
-            Death.SetActive(true);
+            SceneManager.LoadScene("DeadScreen");
             this.gameObject.SetActive(false);
             spawn.gameObject.SetActive(false);
         }
