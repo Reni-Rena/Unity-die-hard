@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/DeadScreen.unity
+    guid: f849f6036c51e8748a0f8e038c12070d
   - enabled: 1
     path: Assets/SimplePoly City - Low Poly Assets/Demo/SimplePoly City - Low Poly
       Assets_Demo Scene.unity
