@@ -5,6 +5,7 @@ using UnityEngine;
 public class spawnenemie : MonoBehaviour
 {
     public GameObject mob;
+    public GameObject particle;
     public GameObject[] spawns;
 
     // Start is called before the first frame update
@@ -23,7 +24,8 @@ public class spawnenemie : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(2);
-            Instantiate(mob, spawns[UnityEngine.Random.Range(0,spawns.Length-1)].transform.position, base.transform.rotation);
+            
+            Instantiate(particle, Instantiate(mob, spawns[UnityEngine.Random.Range(0, spawns.Length - 1)].transform.position, base.transform.rotation).transform.position, base.transform.rotation);
         }
     }
 }

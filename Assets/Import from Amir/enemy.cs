@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.ParticleSystem;
 
 public class enemy : MonoBehaviour
 {
@@ -31,4 +32,13 @@ public class enemy : MonoBehaviour
         }
     }
 
-}
+    private void OnCollisionEnter(UnityEngine.Collision collision)
+         {
+            if (collision.gameObject.tag == "Player")
+            {
+               collision.gameObject.GetComponent<Health>().TakeDamage(10);
+            
+             Destroy(this.gameObject);
+            }
+        }
+    }
