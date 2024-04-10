@@ -16,6 +16,9 @@ public class UImanager : MonoBehaviour
     [Range(0f,100f)]
     public float hp;
 
+    public TextMeshProUGUI ScoreText;
+    
+
     void Start()
     {
         
@@ -33,4 +36,8 @@ public class UImanager : MonoBehaviour
         hpText.text = "Health :"+value.ToString();
     }
 
+    public void ChanceScore(float Score)
+    {
+        ScoreText.text = "Score :" + Score.ToString();
+    }
 }

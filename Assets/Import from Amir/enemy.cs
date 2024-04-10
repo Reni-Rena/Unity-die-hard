@@ -7,12 +7,16 @@ using static UnityEngine.ParticleSystem;
 public class enemy : MonoBehaviour
 {
     public int AmountHealth;
+    public float MaxHealth;
+    public Canvas CanvasEnemy;
+    
     NavMeshAgent Agent;
     public GameObject Player;
+    public GameObject DeathParticle;
     void Start()
     {
         Agent = gameObject.GetComponent<NavMeshAgent>();
-
+        CanvasEnemy.GetComponent<HealthEnemy>().ChangehealthBar(AmountHealth, MaxHealth);
         Player = GameObject.FindGameObjectWithTag("Player");
         
     }
@@ -26,8 +30,10 @@ public class enemy : MonoBehaviour
     public void TakeDamage(int value)
     {
         AmountHealth -= value;
-        if(AmountHealth <= 0 )
+        CanvasEnemy.GetComponent<HealthEnemy>().ChangehealthBar(AmountHealth, MaxHealth);
+        if (AmountHealth <= 0 )
         {
+            Instantiate(DeathParticle, this.transform.position, base.transform.rotation);
             Destroy(this.gameObject);
         }
     }
@@ -36,9 +42,10 @@ public class enemy : MonoBehaviour
          {
             if (collision.gameObject.tag == "Player")
             {
-               collision.gameObject.GetComponent<Health>().TakeDamage(10);
-            
-             Destroy(this.gameObject);
+                 collision.gameObject.GetComponent<Health>().TakeDamage(10);
+                 
+                Instantiate(DeathParticle, this.transform.position, base.transform.rotation);
+                Destroy(this.gameObject);
             }
         }
     }
